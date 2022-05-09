@@ -1,0 +1,338 @@
+body {
+    background-image: url("../1627118457_33-kartinkin-com-p-chernii-dizainerskii-fon-krasivo-33 (1).jpg");
+    background-attachment: fixed;
+}
+
+header {
+    width: 100%;
+
+    .menu {
+        background: black;
+        width: 100%;
+        height: 100px;
+
+        ul {
+            width: 80%;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+
+            a {
+                svg {
+                    transition: fill .3s;
+                }
+
+                svg:hover {
+                    fill: rgb(147, 2, 2);
+                }
+            }
+
+            .right-side {
+                width: 60%;
+                display: flex;
+                justify-content: space-around;
+                font-size: 22px;
+
+                a {
+                    li {
+                        font-family: 'RadianceBold', sans-serif;
+                    }
+                }
+            }
+        }
+    }
+}
+//
+.hamburger-menu {
+    display: none;
+    width: 70%;
+}
+
+#menu__toggle {
+    display: none;
+}
+
+.menu__btn {
+    display: flex;
+    /* используем flex для центрирования содержимого */
+    align-items: center;
+    /* центрируем содержимое кнопки */
+    position: absolute;
+    top: 38px;
+    right: 56px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 12;
+}
+
+/* добавляем "гамбургер" */
+.menu__btn>span,
+.menu__btn>span::before,
+.menu__btn>span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+}
+
+.menu__btn>span::before {
+    content: "";
+    top: -8px;
+}
+
+.menu__btn>span::after {
+    content: "";
+    top: 8px;
+}
+
+/* контейнер меню */
+header .menu .menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: #121212;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* элементы меню */
+.menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #fff;
+    font-size: 20px;
+    font-family: "Reaver";
+    text-decoration: none;
+}
+
+.menu__item:hover {
+    background-color: #cfd8dc;
+    color: black;
+}
+
+#menu__toggle:checked~.menu__btn>span {
+    transform: rotate(45deg);
+}
+
+#menu__toggle:checked~.menu__btn>span::before {
+    top: 0;
+    transform: rotate(0);
+}
+
+#menu__toggle:checked~.menu__btn>span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+#menu__toggle:checked~.menu__box {
+    visibility: visible;
+    right: 0;
+    left: auto;
+    z-index: 1;
+}
+
+//
+.update_information{
+    margin: auto;
+    width: 96%;
+}
+.update-section {
+    color: grey;
+    font-size: 20px;
+    border-left: #4682B4 2px solid;
+    margin: auto;
+    margin-top: 20px;
+    line-height: 30px;
+    background-color: black;
+    width: 90%;
+    padding: 25px;
+    padding-right: 0;
+    height: auto;
+    .update_list{
+        width: 100%;
+        .inf {
+            font-size: 20px;
+            color: gray;
+            margin-bottom: 10px;
+            margin-left: 20px;
+        }
+    }
+}
+
+h3,
+h5 {
+    color: white;
+}
+
+.pre-footer {
+    width: 100%;
+    margin: 50px auto;
+    margin-bottom: 0;
+    padding-bottom: 50px;
+    background: url(../pics/footer_bs.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+
+    .pre-footer-head {
+        margin-left: 10%;
+        padding-top: 30px;
+
+        .war {
+            font-size: 140px;
+            font-family: "Reaver", sans-serif;
+            color: #e2dace;
+        }
+
+        .join {
+            font-size: 70px;
+            font-family: "Reaver", sans-serif;
+            color: #E2DACE90;
+        }
+    }
+
+    .miniLine {
+        width: 10%;
+        height: 3px;
+        background-color: rgb(147, 2, 2);
+        margin-left: 10%;
+    }
+
+    .play {
+        margin-left: 10%;
+        margin-top: 35px;
+        width: 250px;
+        border: 2px solid white;
+        background-color: rgba(0, 0, 0, 0.285);
+        backdrop-filter: blur(10px);
+        height: 70px;
+        border-radius: 15vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+        transition: border 0.3s;
+        a {
+            font-family: 'Radiance', sans-serif;
+            text-transform: uppercase;
+        }
+    }
+    .play:hover {
+        border: 2px solid rgb(147, 2, 2);
+    }
+
+    .play:hover a {
+        color: #fff;
+    }
+}
+
+footer{
+    padding-bottom: 50px;
+    padding-top: 50px;
+    background-color: #000;
+    .footer-container{
+        width: 50%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        .logos-block{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .valve_logo, .dota_logo {
+            margin: 0px 15px 20px 15px;
+            max-height: 30px;
+        }
+    }
+    p{
+        margin-top: 30px;
+        text-align: center;
+        color: #777;
+    }
+}
+
+@media(max-width: 2570px) {
+    .update-section{
+        font-size: 22px;
+    }
+    .update-section .update_list .inf{
+        font-size: 20px;
+    }
+    header .menu ul .right-side a li {
+        font-size: 32px;
+    }
+    footer p {
+        font-size: 30px;
+    }
+}
+@media(max-width: 1460px) {
+    header .menu ul .right-side a li {
+        font-size: 26px;
+    }
+    footer p {
+        font-size: 22px;
+    }
+}
+
+@media(max-width: 780px) {
+    header .menu ul .right-side a {
+        display: none;
+    }
+    nav .nav-section .nav-item p{
+        font-size: 20px;
+    }
+    header .menu ul .right-side .hamburger-menu a{
+        display: block;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+    .pre-footer .pre-footer-head .join{
+        font-size: 34px;
+    }
+    .pre-footer .pre-footer-head .war{
+        font-size: 70px;
+    }
+    footer p{
+        font-size: 14px;
+    }
+}
+@media(max-width: 430px){
+    .update-section{
+        font-size: 12px;
+    }
+    .update-section .update_list .inf{
+        font-size: 10px;
+    }
+    footer .footer-container{
+        width: 70%;
+    }
+    footer .footer-container .valve_logo, footer .footer-container .dota_logo{
+        margin: 0;
+        max-height: 20px;
+    }
+    .pre-footer .pre-footer-head .war{
+        font-size: 30px;
+    }
+    .pre-footer .pre-footer-head .join{
+        font-size: 20px;
+    }
+    .pre-footer .play{
+        width: 190px;
+        font-size: 16px;
+    }
+}

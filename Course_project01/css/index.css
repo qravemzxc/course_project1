@@ -1,0 +1,628 @@
+@charset "UTF-8";
+body {
+  background-color: black;
+}
+
+header {
+  width: 100%;
+  height: 800px;
+  background-image: url(../pics/header-img.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-attachment: fixed;
+  background-size: 100%;
+}
+
+header .menu {
+  background: #000;
+  width: 100%;
+  height: 100px;
+}
+
+header .menu ul {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+}
+
+header .menu ul a svg {
+  -webkit-transition: fill .3s;
+  transition: fill .3s;
+}
+
+header .menu ul a svg:hover {
+  fill: #930202;
+}
+
+header .menu ul .right-side {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 22px;
+}
+
+header .menu ul .right-side a li {
+  font-family: 'RadianceBold', sans-serif;
+}
+
+.hamburger-menu {
+  display: none;
+  width: 70%;
+}
+
+#menu__toggle {
+  display: none;
+}
+
+.menu__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* используем flex для центрирования содержимого */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* центрируем содержимое кнопки */
+  position: absolute;
+  top: 38px;
+  right: 56px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 12;
+}
+
+/* добавляем "гамбургер" */
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+}
+
+.menu__btn > span::before {
+  content: "";
+  top: -8px;
+}
+
+.menu__btn > span::after {
+  content: "";
+  top: 8px;
+}
+
+/* контейнер меню */
+header .menu .menu__box {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  text-align: center;
+  background-color: #121212;
+  -webkit-box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* элементы меню */
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: #fff;
+  font-size: 20px;
+  font-family: "Reaver";
+  text-decoration: none;
+}
+
+.menu__item:hover {
+  background-color: #cfd8dc;
+  color: black;
+}
+
+#menu__toggle:checked ~ .menu__btn > span {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  right: 0;
+  left: auto;
+  z-index: 1;
+}
+
+nav {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  height: 600px;
+}
+
+nav .nav-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 50%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+nav .nav-section .nav-item {
+  width: 50%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+nav .nav-section .nav-item .img-container {
+  width: 90%;
+}
+
+nav .nav-section .nav-item .img-container .obnov {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+nav .nav-section .nav-item p {
+  padding: 4px 0;
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 26px;
+  border-radius: .4vw;
+  margin-top: 15px;
+  background-color: rgba(0, 0, 0, 0.476);
+}
+
+.info {
+  background-image: url(../pics/info-img.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.info .text {
+  width: 70%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 400px;
+}
+
+.info .text .choice {
+  font-family: "Reaver", sans-serif;
+  text-align: center;
+  width: 70%;
+  font-size: 40px;
+  font-weight: 800;
+  text-shadow: 5px 5px rgba(0, 0, 0, 0.447);
+}
+
+.info .text .spisok {
+  padding: 25px;
+  border-radius: 2vw;
+  color: #fff;
+  text-align: center;
+  width: 60%;
+  font-size: 25px;
+  background-color: rgba(0, 0, 0, 0.837);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.info .button {
+  margin: auto;
+  width: 250px;
+  border: 2px solid white;
+  background-color: rgba(0, 0, 0, 0.285);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  height: 70px;
+  border-radius: 15vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 22px;
+  -webkit-transition: border 0.3s;
+  transition: border 0.3s;
+}
+
+.info .button a {
+  font-family: 'RadianceBold', sans-serif;
+  text-transform: uppercase;
+}
+
+.info .button:hover {
+  border: 2px solid #930202;
+}
+
+.info .button:hover a {
+  color: #fff;
+}
+
+.dpc .international {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 750px;
+}
+
+.dpc .tournament {
+  font-family: "Reaver", sans-serif;
+  font-size: 45px;
+  color: bisque;
+  text-align: center;
+}
+
+.dpc .dpc-rest {
+  text-indent: 70px;
+  width: 90%;
+  font-size: 20px;
+  color: white;
+  margin: auto;
+  margin-top: 30px;
+  text-align: justify;
+}
+
+.dpc .dpc-description {
+  margin-top: -260px;
+}
+
+.dpc .line {
+  margin-top: 100px;
+  border-top: 2px solid #D2691E;
+}
+
+.dpc .whatIs {
+  font-size: 60px;
+  color: bisque;
+  text-align: center;
+  margin: 50px 0;
+  font-family: "Reaver", sans-serif;
+}
+
+.pre-footer {
+  width: 100%;
+  margin: 50px auto;
+  padding-bottom: 50px;
+  background: url(../pics/footer_bs.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.pre-footer .pre-footer-head {
+  margin-left: 10%;
+  padding-top: 30px;
+}
+
+.pre-footer .pre-footer-head .war {
+  font-size: 140px;
+  font-family: "Reaver", sans-serif;
+  color: #e2dace;
+}
+
+.pre-footer .pre-footer-head .join {
+  font-size: 70px;
+  font-family: "Reaver", sans-serif;
+  color: #E2DACE90;
+}
+
+.pre-footer .miniLine {
+  width: 10%;
+  height: 3px;
+  background-color: #930202;
+  margin-left: 10%;
+}
+
+.pre-footer .play {
+  margin-left: 10%;
+  margin-top: 35px;
+  width: 250px;
+  border: 2px solid white;
+  background-color: rgba(0, 0, 0, 0.285);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  height: 70px;
+  border-radius: 15vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 22px;
+  -webkit-transition: border 0.3s;
+  transition: border 0.3s;
+}
+
+.pre-footer .play a {
+  font-family: 'Radiance', sans-serif;
+  text-transform: uppercase;
+}
+
+.pre-footer .play:hover {
+  border: 2px solid #930202;
+}
+
+.pre-footer .play:hover a {
+  color: #fff;
+}
+
+footer {
+  padding-bottom: 50px;
+}
+
+footer .footer-container {
+  width: 50%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer .footer-container .logos-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer .footer-container .valve_logo,
+footer .footer-container .dota_logo {
+  margin: 0px 15px 20px 15px;
+  max-height: 30px;
+}
+
+footer p {
+  margin-top: 30px;
+  text-align: center;
+  color: #777;
+}
+
+@media (max-width: 2570px) {
+  header .menu ul .right-side a li {
+    font-size: 32px;
+  }
+  .info .text .choice {
+    font-size: 66px;
+  }
+  .info .text .spisok {
+    font-size: 30px;
+  }
+  .dpc .tournament {
+    font-size: 60px;
+  }
+  .dpc .dpc-rest {
+    font-size: 30px;
+  }
+  footer p {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 1460px) {
+  header .menu ul .right-side a li {
+    font-size: 26px;
+  }
+  .info .text .choice {
+    font-size: 46px;
+  }
+  .info .text .spisok {
+    font-size: 24px;
+  }
+  .dpc .tournament {
+    font-size: 46px;
+  }
+  .dpc .dpc-rest {
+    font-size: 24px;
+  }
+  footer p {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 780px) {
+  nav {
+    height: 400px;
+  }
+  header .menu ul .right-side a {
+    display: none;
+  }
+  nav .nav-section .nav-item p {
+    font-size: 20px;
+  }
+  header {
+    height: 600px;
+  }
+  .hamburger-menu {
+    display: block;
+  }
+  .info .text .choice {
+    font-size: 36px;
+    color: wheat;
+  }
+  .info .text .spisok {
+    width: 100%;
+    font-size: 22px;
+  }
+  .info .button {
+    margin-top: -50px;
+  }
+  .dpc .international {
+    height: 510px;
+  }
+  .dpc .tournament {
+    font-size: 28px;
+  }
+  .dpc .dpc-rest {
+    font-size: 20px;
+  }
+  .dpc .whatIs {
+    font-size: 40px;
+  }
+  .pre-footer .pre-footer-head .join {
+    font-size: 34px;
+  }
+  .pre-footer .pre-footer-head .war {
+    font-size: 70px;
+  }
+  footer p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 430px) {
+  nav {
+    margin-top: 5px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  nav .nav-section {
+    width: 100%;
+    margin-top: 5px;
+  }
+  .info .text .choice {
+    font-size: 26px;
+  }
+  .info .text .spisok {
+    font-size: 16px;
+  }
+  .info .button {
+    width: 200px;
+    height: 56px;
+    font-size: 18px;
+  }
+  .dpc .international {
+    height: 240px;
+  }
+  .dpc .tournament {
+    font-size: 18px;
+  }
+  footer .footer-container {
+    width: 70%;
+  }
+  footer .footer-container .valve_logo, footer .footer-container .dota_logo {
+    margin: 0;
+    max-height: 20px;
+  }
+  .dpc .dpc-description {
+    margin-top: -80px;
+  }
+  .dpc .dpc-rest {
+    text-indent: 0;
+    font-size: 14px;
+    text-align: center;
+  }
+  .pre-footer .pre-footer-head .war {
+    font-size: 46px;
+  }
+  .pre-footer .play {
+    width: 190px;
+    font-size: 16px;
+  }
+  nav .nav-section .nav-item p {
+    font-size: 14px;
+  }
+}
+/*# sourceMappingURL=index.css.map */
